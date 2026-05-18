@@ -1,0 +1,107 @@
+{
+ "doctype": "DocType",
+ "name": "Lab Machine Log",
+ "module": "HL7 Sync",
+ "autoname": "format:HLLOG-{YYYY}-{MM}-{DD}-{###}",
+ "track_changes": 0,
+ "field_order": [
+  "machine",
+  "received_at",
+  "status",
+  "column_break_1",
+  "machine_make",
+  "machine_model",
+  "erpnext_record",
+  "section_hl7",
+  "raw_hl7_message",
+  "section_error",
+  "error_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Lab Machine",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "received_at",
+   "fieldtype": "Datetime",
+   "label": "Received At",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Success\nFailed",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "machine_make",
+   "fieldtype": "Data",
+   "label": "Machine Make",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "machine_model",
+   "fieldtype": "Data",
+   "label": "Machine Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "erpnext_record",
+   "fieldtype": "Data",
+   "label": "ERPNext Record Name",
+   "read_only": 1,
+   "description": "Name of the Lab Machine Message record created in ERPNext"
+  },
+  {
+   "fieldname": "section_hl7",
+   "fieldtype": "Section Break",
+   "label": "Raw HL7 Message",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "raw_hl7_message",
+   "fieldtype": "Code",
+   "label": "Raw HL7 Message",
+   "options": "Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_error",
+   "fieldtype": "Section Break",
+   "label": "Error Details",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Long Text",
+   "label": "Error Message",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1, "write": 0, "create": 0, "delete": 1
+  },
+  {
+   "role": "Laboratory User",
+   "read": 1
+  }
+ ],
+ "sort_field": "received_at",
+ "sort_order": "DESC",
+ "title_field": "machine"
+}

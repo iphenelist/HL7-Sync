@@ -1,0 +1,12 @@
+{
+ "doctype": "Page",
+ "module": "HL7 Sync",
+ "name": "hl7-dashboard",
+ "page_name": "hl7-dashboard",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "Laboratory User"}
+ ],
+ "standard": "Yes",
+ "title": "HL7 Dashboard"
+}

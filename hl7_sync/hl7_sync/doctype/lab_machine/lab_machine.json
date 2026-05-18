@@ -1,0 +1,130 @@
+{
+ "doctype": "DocType",
+ "name": "Lab Machine",
+ "module": "HL7 Sync",
+ "autoname": "field:machine_name",
+ "track_changes": 1,
+ "field_order": [
+  "machine_name",
+  "machine_make",
+  "machine_model",
+  "column_break_1",
+  "port",
+  "encoding",
+  "is_active",
+  "section_status",
+  "listener_status",
+  "listener_pid",
+  "last_message_at",
+  "last_message_status",
+  "total_messages_received"
+ ],
+ "fields": [
+  {
+   "fieldname": "machine_name",
+   "fieldtype": "Data",
+   "label": "Machine Name",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "e.g. Dymind DX-800, Mindray BC-760"
+  },
+  {
+   "fieldname": "machine_make",
+   "fieldtype": "Data",
+   "label": "Machine Make",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "e.g. Dymind, MindRay, Sysmex"
+  },
+  {
+   "fieldname": "machine_model",
+   "fieldtype": "Data",
+   "label": "Machine Model",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "e.g. DF5x, BC-760, XN-550"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port",
+   "fieldtype": "Int",
+   "label": "Listening Port",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "TCP port this listener will bind to (e.g. 5600, 5601)"
+  },
+  {
+   "fieldname": "encoding",
+   "fieldtype": "Select",
+   "label": "Message Encoding",
+   "options": "latin-1\nutf-8\nascii",
+   "default": "latin-1",
+   "reqd": 1,
+   "description": "Character encoding sent by the machine"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_status",
+   "fieldtype": "Section Break",
+   "label": "Runtime Status",
+   "collapsible": 0
+  },
+  {
+   "fieldname": "listener_status",
+   "fieldtype": "Select",
+   "label": "Listener Status",
+   "options": "\nRunning\nStopped\nError",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "listener_pid",
+   "fieldtype": "Int",
+   "label": "Listener PID",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "last_message_at",
+   "fieldtype": "Datetime",
+   "label": "Last Message Received",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_message_status",
+   "fieldtype": "Select",
+   "label": "Last Message Status",
+   "options": "\nSuccess\nFailed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_messages_received",
+   "fieldtype": "Int",
+   "label": "Total Messages Received",
+   "default": "0",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1, "write": 1, "create": 1, "delete": 1
+  },
+  {
+   "role": "Laboratory User",
+   "read": 1
+  }
+ ],
+ "sort_field": "machine_name",
+ "sort_order": "ASC",
+ "title_field": "machine_name"
+}

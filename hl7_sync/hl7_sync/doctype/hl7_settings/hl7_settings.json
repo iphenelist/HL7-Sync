@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "creation": "2026-05-18 09:33:44.476836",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "erpnext_connection_section",
+  "erpnext_url",
+  "column_break_1",
+  "api_key",
+  "api_secret",
+  "logging_section",
+  "logs_directory",
+  "log_raw_hl7",
+  "is_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "erpnext_connection_section",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Connection"
+  },
+  {
+   "description": "e.g. https://erp.mycompany.com",
+   "fieldname": "erpnext_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ERPNext URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "API Key",
+   "reqd": 1
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "API Secret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "logging_section",
+   "fieldtype": "Section Break",
+   "label": "Logging"
+  },
+  {
+   "default": "logs",
+   "description": "Relative or absolute path for error logs",
+   "fieldname": "logs_directory",
+   "fieldtype": "Data",
+   "label": "Logs Directory"
+  },
+  {
+   "default": "1",
+   "description": "Store full HL7 message in Lab Machine Log",
+   "fieldname": "log_raw_hl7",
+   "fieldtype": "Check",
+   "label": "Log Raw HL7 Messages"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_enabled",
+   "fieldtype": "Check",
+   "label": "Enable All Listeners"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-18 09:37:18.791931",
+ "modified_by": "Administrator",
+ "module": "HL7 SYNC",
+ "name": "HL7 Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

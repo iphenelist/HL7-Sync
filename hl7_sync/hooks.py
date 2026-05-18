@@ -1,8 +1,8 @@
 app_name = "hl7_sync"
 app_title = "HL7 SYNC"
-app_publisher = "Aakvatech Limited"
+app_publisher = "Innocent P Metumba"
 app_description = "HL7 Lab Machine Listener for Healthcare"
-app_email = "info@aakvatech.com"
+app_email = "innocntphenelist@gmail.com"
 app_license = "mit"
 
 # Apps
@@ -148,23 +148,23 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"hl7_sync.tasks.all"
-# 	],
-# 	"daily": [
-# 		"hl7_sync.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"hl7_sync.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"hl7_sync.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"hl7_sync.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"all": [
+		"hl7_sync.scheduled_tasks.watchdog.check_listeners"
+	],
+	# "daily": [
+	# 	"hl7_sync.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"hl7_sync.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"hl7_sync.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"hl7_sync.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
@@ -227,7 +227,6 @@ app_license = "mit"
 # 		"doctype": "{doctype_4}"
 # 	}
 # ]
-
 # Authentication and authorization
 # --------------------------------
 
