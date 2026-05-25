@@ -13,7 +13,7 @@ frappe.pages["hl7-dashboard"].on_page_load = function (wrapper) {
         frappe.confirm(__("Start listeners for all active machines?"), () => {
             frappe.show_alert({ message: __("Starting all listeners..."), indicator: "blue" });
             frappe.call({
-                method: "hl7_sync.page.hl7_dashboard.hl7_dashboard.start_all",
+                method: "hl7_sync.hl7_sync.page.hl7_dashboard.hl7_dashboard.start_all",
                 callback(r) {
                     frappe.show_alert({ message: __("All listeners started."), indicator: "green" });
                     load();
@@ -25,7 +25,7 @@ frappe.pages["hl7-dashboard"].on_page_load = function (wrapper) {
     page.add_inner_button(__("Stop All"), () => {
         frappe.confirm(__("Stop all running listeners?"), () => {
             frappe.call({
-                method: "hl7_sync.page.hl7_dashboard.hl7_dashboard.stop_all",
+                method: "hl7_sync.hl7_sync.page.hl7_dashboard.hl7_dashboard.stop_all",
                 callback() {
                     frappe.show_alert({ message: __("All listeners stopped."), indicator: "orange" });
                     load();
@@ -46,7 +46,7 @@ frappe.pages["hl7-dashboard"].on_page_load = function (wrapper) {
     // ── Load ──────────────────────────────────────────────────────────────
     function load() {
         frappe.call({
-            method: "hl7_sync.page.hl7_dashboard.hl7_dashboard.get_dashboard_data",
+            method: "hl7_sync.hl7_sync.page.hl7_dashboard.hl7_dashboard.get_dashboard_data",
             callback(r) {
                 if (!r.message) return;
                 const { machines, recent_logs, stats } = r.message;
@@ -168,7 +168,7 @@ frappe.pages["hl7-dashboard"].on_page_load = function (wrapper) {
     window.start_machine = function (name) {
         frappe.show_alert({ message: __("Starting {0}...", [name]), indicator: "blue" });
         frappe.call({
-            method: "hl7_sync.page.hl7_dashboard.hl7_dashboard.start_machine",
+            method: "hl7_sync.hl7_sync.page.hl7_dashboard.hl7_dashboard.start_machine",
             args: { machine_name: name },
             callback(r) {
                 const ok = r.message && r.message.success;
@@ -183,7 +183,7 @@ frappe.pages["hl7-dashboard"].on_page_load = function (wrapper) {
 
     window.stop_machine = function (name) {
         frappe.call({
-            method: "hl7_sync.page.hl7_dashboard.hl7_dashboard.stop_machine",
+            method: "hl7_sync.hl7_sync.page.hl7_dashboard.hl7_dashboard.stop_machine",
             args: { machine_name: name },
             callback() { frappe.show_alert({ message: __("{0} stopped.", [name]), indicator: "orange" }); load(); }
         });
