@@ -150,9 +150,9 @@ def get_all_statuses():
     """
     machines = frappe.get_all(
         "Lab Machine",
-        fields=["name", "machine_name", "port", "listener_status",
-                "last_message_at", "last_message_status",
-                "total_messages_received", "is_active"]
+        fields=["name", "machine_name", "machine_make", "machine_model",
+                "port", "listener_status", "last_message_at",
+                "last_message_status", "total_messages_received", "is_active"]
     )
     statuses = []
     for m in machines:
